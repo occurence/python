@@ -9,7 +9,7 @@
 
 # Import cars data
 import pandas as pd
-cars = pd.read_csv('cars.csv', index_col = 0)
+cars = pd.read_csv('D:\STUDY\python\Course_Intermediate_Python\cars.csv', index_col = 0)
 print(cars)
 # Print out observation for Japan
 print(cars.iloc[2])

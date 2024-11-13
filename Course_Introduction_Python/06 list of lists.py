@@ -12,4 +12,5 @@ house = [["hallway", hall],
          ["bathroom", bath]]
 
 # Print out house
+print(type(house))
 print(house)

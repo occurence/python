@@ -8,4 +8,5 @@ bath = 9.50
 areas = ["hallway", hall, "kitchen", kit, "living room", liv, "bedroom", bed, "bathroom", bath]
 
 # Print areas
+print(type(areas))
 print(areas)

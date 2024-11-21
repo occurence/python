@@ -19,4 +19,4 @@ drop_columns = ['rental_date','return_date','rental_length','rental_length_days'
 x = df_info.drop(drop_columns, axis=1)
 y = df_info['rental_length_days']
 
-print(np.where(df_rental["special_features"].str.contains("Deleted Scenes"), 1, 0))
+print(np.where(df_info["special_features"].str.contains("Deleted Scenes"), 1, 0))

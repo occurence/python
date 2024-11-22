@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Read in the Netflix CSV as a DataFrame
-netflix_df = pd.read_csv(r"Project_Investigate_Netflix_Movies\netflix_data.csv")
+netflix_df = pd.read_csv(r"D:\STUDY\python\Track_Associate_Data_Scientist_Python\03_Project_Investigate_Netflix_Movies\netflix_data.csv")
 
 print(netflix_df.head())
 # Start coding here! Use as many cells as you like

@@ -2,7 +2,7 @@
 import pandas as pd
 
 # Read in the data
-schools = pd.read_csv(r"Project_Exploring_School_Result\schools.csv")
+schools = pd.read_csv(r"D:\STUDY\python\Track_Associate_Data_Scientist_Python\05_Project_Exploring_School_Result\schools.csv")
 
 # Preview the data
 print(schools.head())

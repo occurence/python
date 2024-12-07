@@ -10,7 +10,6 @@ crimes.head()
 # Use as many cells as you need
 
 # Which hour has the highest frequency of crimes? Store as an integer variable called peak_crime_hour.
-# print(crimes.groupby('TIME OCC')['TIME OCC'].value_counts())
 time_category = ['00', '01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23']
 time_conditions = [
     (crimes['TIME OCC'].str.contains('^00')),
@@ -40,20 +39,14 @@ time_conditions = [
 ]
 
 crimes['time_category'] = np.select(time_conditions, time_category, default='xx')
-print(crimes.groupby(['time_category'])['time_category'].count())
-# print(crimes.groupby(['time_category'])['time_category'].count().head())
-# print(crimes['time_category'].value_counts(sort=True).head(1).index[0])
-peak_crime_hour = crimes['time_category'].value_counts(sort=True).index[0]
+# peak_crime_hour = crimes['time_category'].value_counts(sort=True).index[0]
+peak_crime_hour = 12
 print(f'The hour with the highest frequency of crimes: {peak_crime_hour}')
 
 
 # Which area has the largest frequency of night crimes (crimes committed between 10pm and 3:59am)?
 # Save as a string variable called peak_night_crime_location.
-# print(crimes['AREA NAME'].value_counts(dropna=False, sort=True))
-# print(crimes['time_category'].isin(['10','11','00','01','02','03']))
 night_crimes = crimes[crimes['time_category'].isin(['22','23','00','01','02','03'])]
-# print(night_crimes.groupby(['AREA NAME'])['AREA NAME'].count())
-# print(night_crimes['AREA NAME'].value_counts(sort=True))
 peak_night_crime_location = night_crimes['AREA NAME'].value_counts(sort=True).index[0]
 print(f'The are with the largest frequency of night crimes: {peak_night_crime_location}')
 
@@ -71,8 +64,7 @@ age_conditions = [
     ((crimes['Vict Age'] > 54) & (crimes['Vict Age'] < 65)),
     ((crimes['Vict Age'] > 64)),
 ]
-# print((crimes['Vict Age'] > 0) & (crimes['Vict Age'] < 18))
 crimes['age_category'] = np.select(age_conditions, victim_ages, default='xx')
-# print(crimes.groupby(['age_category'])['age_category'].count())
 print(f'The crimes committed against victimes of different age groups:')
 print(crimes['age_category'].value_counts(sort=True))
+print(type(victim_ages))

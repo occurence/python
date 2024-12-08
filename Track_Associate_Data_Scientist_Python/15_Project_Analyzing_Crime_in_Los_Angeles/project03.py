@@ -58,5 +58,5 @@ age_labels = ["0-17", "18-25", "26-34", "35-44", "45-54", "55-64", "65+"]
 age_bins = [0, 17, 25, 34, 44, 54, 64, np.inf]
 crimes['age_category'] = pd.cut(crimes['Vict Age'], bins=age_bins, labels=age_labels)
 victim_ages = crimes['age_category'].value_counts(sort=True)
-print(f'The crimes committed against victimes of different age groups:')
+print(f'The crimes committed against victims of different age groups:')
 print(victim_ages)

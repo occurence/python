@@ -17,7 +17,7 @@ lr = LogisticRegression(random_state=SEED, solver="liblinear")
 knn = KNeighborsClassifier(n_neighbors=27)
 dt = DecisionTreeClassifier(min_samples_leaf=0.13, random_state=SEED)
 classifiers = [('Logistic Regression', lr), ('K Nearest Neighbours', knn), ('Classification Tree', dt)]
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=SEED)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, stratify=y, random_state=SEED)
 
 
 # Iterate over the pre-defined list of classifiers

@@ -16,7 +16,8 @@ FROM
   grid 
   -- Return only rows where demand_loss_mw is missing or unknown  
 WHERE 
-  demand_loss_mw IS NULL;
+  -- demand_loss_mw IS NULL;
+  demand_loss_mw = '';
 """
 
 df = pd.read_sql(query, conn)

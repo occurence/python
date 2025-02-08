@@ -42,12 +42,12 @@ GROUP BY
 
 SELECT 
   country, 
-  COUNT (country) AS country_count, 
+  COUNT(country) AS country_count, 
   -- AVG (place) AS avg_place, 
-  AVG (place) AS avg_place, 
-  AVG (points) AS avg_points, 
-  MIN (points) AS min_points, 
-  MAX (points) AS max_points 
+  AVG(CAST(place AS FLOAT)) AS avg_place, 
+  AVG(CAST(place AS FLOAT)) AS avg_points, 
+  MIN(points) AS min_points, 
+  MAX(points) AS max_points 
 FROM 
   eurovision 
 GROUP BY 

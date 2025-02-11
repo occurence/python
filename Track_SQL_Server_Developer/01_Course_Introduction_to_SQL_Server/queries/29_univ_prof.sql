@@ -19,7 +19,7 @@ CREATE TABLE universities(
 
 -- Print the contents of this table
 SELECT * 
-FROM universities
+FROM universities;
 
 DROP TABLE IF EXISTS organizations;
 -- Create a table for the organizations entity type

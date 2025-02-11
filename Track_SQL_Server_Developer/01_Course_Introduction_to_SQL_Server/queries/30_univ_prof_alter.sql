@@ -11,6 +11,7 @@ FROM professors;
 -- RENAME COLUMN organisation TO organization
 EXEC sp_rename 'affiliations.organisation', 'organization', 'COLUMN';
 
+-- Delete the university_shortname column
 ALTER TABLE affiliations
 DROP COLUMN university_shortname;
 

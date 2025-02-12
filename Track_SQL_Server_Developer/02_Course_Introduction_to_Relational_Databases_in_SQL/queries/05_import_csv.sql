@@ -12,7 +12,7 @@ EXEC sp_MSset_oledb_prop N'Microsoft.ACE.OLEDB.12.0', N'DynamicParameters', 1;
 SELECT * INTO dbo.MyTable
 FROM OPENROWSET(
     'Microsoft.ACE.OLEDB.12.0',
-    'Text;Database=D:\STUDY\python\Track_SQL_Server_Developer\01_Course_Introduction_to_SQL_Server\datasets\college.csv;',
+    'Text;Database=D:\STUDY\python\Track_SQL_Server_Developer\02_Course_Introduction_to_Relational_Databases_in_SQL\datasets\college.csv;',
     'SELECT * FROM [File.csv]'
 );
 */
@@ -31,7 +31,7 @@ CREATE TABLE college(
 );
 
 BULK INSERT college
-FROM 'D:\STUDY\python\Track_SQL_Server_Developer\01_Course_Introduction_to_SQL_Server\datasets\college.csv'
+FROM 'D:\STUDY\python\Track_SQL_Server_Developer\02_Course_Introduction_to_Relational_Databases_in_SQL\datasets\college.csv'
 WITH (
     FORMAT = 'CSV',
     FIELDTERMINATOR = ',',

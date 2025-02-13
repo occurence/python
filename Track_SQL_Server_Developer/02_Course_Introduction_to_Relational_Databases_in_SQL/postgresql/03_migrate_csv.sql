@@ -16,7 +16,7 @@ SELECT *
 FROM university_professors;
 
 COPY university_professors(firstname, lastname, university, university_shortname, university_city, function, organization, organization_sector)
-FROM 'D:\STUDY\python\Track_SQL_Server_Developer\02_Course_Introduction_to_Relational_Databases_in_SQL\datasets\college.csv'
+FROM 'D:\STUDY\python\Track_SQL_Server_Developer\02_Course_Introduction_to_Relational_Databases_in_SQL\datasets\university_professors.csv'
 DELIMITER ','
 CSV HEADER;
 

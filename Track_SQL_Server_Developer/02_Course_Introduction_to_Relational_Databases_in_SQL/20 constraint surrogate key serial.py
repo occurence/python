@@ -1,23 +1,28 @@
 import psycopg2
 import pandas as pd
 
-DB_PARAMS = { "dbname": "college", "user": "postgres", "password": "postgres", "host": "localhost", "port": "5432", }
+DB_PARAMS = { "dbname": "datacamp", "user": "postgres", "password": "postgres", "host": "localhost", "port": "5432", }
 
 try:
     conn = psycopg2.connect(**DB_PARAMS)
     cur = conn.cursor()
 
     sql_script = """
-    -- Make universities.university_shortname unique
-    ALTER TABLE universities
-    ADD CONSTRAINT university_shortname_unq UNIQUE(university_shortname);
+    -- Add the new column to the table
+    ALTER TABLE professors 
+    ADD COLUMN id serial;
 
-    -- Make organizations.organization unique
-    ALTER TABLE organizations
-    ADD CONSTRAINT organization_unq UNIQUE(organization);
+    -- Make id a primary key
+    ALTER TABLE professors 
+    ADD CONSTRAINT professors_pkey PRIMARY KEY (id);
     """
 
     info_query = """
+    -- Have a look at the first 10 rows of professors
+    SELECT *
+    FROM professors
+    LIMIT 10;
+
     SELECT 
         tc.table_name,
         tc.constraint_name,
@@ -27,7 +32,7 @@ try:
     LEFT JOIN information_schema.key_column_usage AS kcu
         ON tc.constraint_name = kcu.constraint_name
         AND tc.table_name = kcu.table_name
-    WHERE tc.table_name IN ('universities', 'organizations');
+    WHERE tc.table_name IN ('professors', 'universities', 'organizations', 'affiliations');
     """
 
     cur.execute(info_query)

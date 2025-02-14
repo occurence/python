@@ -1,34 +1,33 @@
 import psycopg2
 import pandas as pd
 
-DB_PARAMS = { "dbname": "college", "user": "postgres", "password": "postgres", "host": "localhost", "port": "5432", }
+DB_PARAMS = { "dbname": "datacamp", "user": "postgres", "password": "postgres", "host": "localhost", "port": "5432", }
 
 try:
     conn = psycopg2.connect(**DB_PARAMS)
     cur = conn.cursor()
 
     sql_script = """
-    -- Rename the organization column to id
-    ALTER TABLE organizations
-    RENAME COLUMN organization TO id;
+    -- Add the id column
+    ALTER TABLE cars
+    ADD COLUMN id varchar(128);
+
+    -- Update id with make + model
+    UPDATE cars
+    SET id = CONCAT(make, model);
 
     -- Make id a primary key
-    ALTER TABLE organizations
-    ADD CONSTRAINT organization_pk PRIMARY KEY (id);
-
-    -- Rename the university_shortname column to id
-    ALTER TABLE universities
-    RENAME COLUMN university_shortname TO id;
-
-    -- Make id a primary key
-    ALTER TABLE universities
-    ADD CONSTRAINT university_pk PRIMARY KEY (id);
+    ALTER TABLE cars
+    ADD CONSTRAINT id_pk PRIMARY KEY(id);
     """
 
     info_query = """
-    SELECT column_name, data_type
-    FROM information_schema.columns 
-    WHERE table_name IN ('organizations', 'universities');
+    -- Count the number of distinct rows with columns make, model
+    SELECT COUNT(DISTINCT(make, model)) 
+    FROM cars;
+
+    -- Have a look at the table
+    SELECT * FROM cars;
 
     SELECT 
         tc.table_name,
@@ -39,7 +38,7 @@ try:
     LEFT JOIN information_schema.key_column_usage AS kcu
         ON tc.constraint_name = kcu.constraint_name
         AND tc.table_name = kcu.table_name
-    WHERE tc.table_name IN ('professors', 'universities', 'organizations', 'affiliations');
+    WHERE tc.table_name IN ('cars');
     """
 
     cur.execute(info_query)

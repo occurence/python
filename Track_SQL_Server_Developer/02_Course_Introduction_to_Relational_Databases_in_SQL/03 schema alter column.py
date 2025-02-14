@@ -1,25 +1,44 @@
-import pyodbc
+import psycopg2
 import pandas as pd
 
-conn = pyodbc.connect( "DRIVER={SQL Server};" "SERVER=Arc-PC;" "DATABASE=datacamp;" "Trusted_Connection=True;" )
-cursor = conn.cursor()
+DB_PARAMS = { "dbname": "datacamp", "user": "postgres", "password": "postgres", "host": "localhost", "port": "5432", }
 
-variable_query = """
--- Add the university_shortname column
-ALTER TABLE professors
--- ADD COLUMN university_shortname text;
-ADD university_shortname text;
-"""
-cursor.execute(variable_query)
-conn.commit()
+try:
+    conn = psycopg2.connect(**DB_PARAMS)
+    cur = conn.cursor()
 
-select_query = """
--- Print the contents of this table
-SELECT * 
-FROM professors;
-"""
+    sql_script = """
+    -- Add the university_shortname column
+    ALTER TABLE professors
+    ADD COLUMN university_shortname text;
+    """
 
-df = pd.read_sql(select_query, conn)
-print(df)
-cursor.close()
-conn.close()
+    info_query = """
+    -- Print the contents of this table
+    SELECT * 
+    FROM professors;
+
+    -- Query the right table in information_schema to get columns
+    SELECT column_name, data_type 
+    FROM information_schema.columns 
+    WHERE table_name = 'professors' AND table_schema = 'dbo';
+    """
+
+    cur.execute(info_query)
+    
+    for row in cur.fetchall():
+        print(row)
+
+    cur.execute(sql_script)
+    conn.commit()
+
+    cur.execute(info_query)
+    
+    for row in cur.fetchall():
+        print(row)
+
+    cur.close()
+    conn.close()
+
+except psycopg2.Error as e:
+    print(f"Error: {e}")

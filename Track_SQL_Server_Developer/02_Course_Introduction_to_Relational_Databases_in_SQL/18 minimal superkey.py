@@ -11,10 +11,9 @@ try:
     """
 
     info_query = """
-    -- Query the right table in information_schema to get columns
-    SELECT column_name, data_type 
-    FROM information_schema.columns 
-    WHERE table_name = 'university_professors' AND table_schema = 'dbo';
+    -- Try out different combinations
+    SELECT COUNT(DISTINCT(firstname, lastname)) 
+    FROM professors;
     """
 
     cur.execute(info_query)
@@ -24,11 +23,6 @@ try:
 
     # cur.execute(sql_script)
     # conn.commit()
-
-    # cur.execute(info_query)
-    
-    # for row in cur.fetchall():
-    #     print(row)
 
     cur.close()
     conn.close()

@@ -7,30 +7,35 @@ try:
     conn = psycopg2.connect(**DB_PARAMS)
     cur = conn.cursor()
 
-    sql_script = """
-    -- Insert unique professors into the new table
-    INSERT INTO professors 
-    SELECT DISTINCT firstname, lastname, university_shortname 
-    FROM university_professors;
+    sql_script_char = """
+    -- Specify the correct fixed-length character type
+    ALTER TABLE professors
+    ALTER COLUMN university_shortname
+    TYPE CHAR(3);
+    """
+
+    sql_script_varchar = """
+    -- Change the type of firstname
+    ALTER TABLE professors
+    ALTER COLUMN firstname
+    TYPE VARCHAR(64);
     """
 
     info_query = """
-    -- Print the contents of this table
-    SELECT * 
-    FROM professors;
-
-    -- Query the right table in information_schema to get columns
     SELECT column_name, data_type 
     FROM information_schema.columns 
-    WHERE table_name = 'professors' AND table_schema = 'dbo';
+    WHERE table_name = 'professors';
     """
+
+    cur.execute(sql_script_char)
+    conn.commit()
 
     cur.execute(info_query)
     
     for row in cur.fetchall():
         print(row)
 
-    cur.execute(sql_script)
+    cur.execute(sql_script_varchar)
     conn.commit()
 
     cur.execute(info_query)

@@ -8,21 +8,14 @@ try:
     cur = conn.cursor()
 
     sql_script = """
-    -- Insert unique professors into the new table
-    INSERT INTO professors 
-    SELECT DISTINCT firstname, lastname, university_shortname 
-    FROM university_professors;
+    -- Delete the university_professors table
+    -- DROP TABLE university_professors;
     """
 
     info_query = """
-    -- Print the contents of this table
+    -- Doublecheck the contents of university_professors
     SELECT * 
-    FROM professors;
-
-    -- Query the right table in information_schema to get columns
-    SELECT column_name, data_type 
-    FROM information_schema.columns 
-    WHERE table_name = 'professors' AND table_schema = 'dbo';
+    FROM university_professors;
     """
 
     cur.execute(info_query)

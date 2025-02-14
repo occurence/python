@@ -8,27 +8,17 @@ try:
     cur = conn.cursor()
 
     sql_script = """
-    -- Insert unique professors into the new table
-    INSERT INTO professors 
-    SELECT DISTINCT firstname, lastname, university_shortname 
-    FROM university_professors;
+    ALTER TABLE professors 
+    ALTER COLUMN firstname 
+    TYPE varchar(16)
+    USING SUBSTRING(firstname, 1, 16);
     """
 
     info_query = """
-    -- Print the contents of this table
-    SELECT * 
-    FROM professors;
-
-    -- Query the right table in information_schema to get columns
     SELECT column_name, data_type 
     FROM information_schema.columns 
-    WHERE table_name = 'professors' AND table_schema = 'dbo';
+    WHERE table_name = 'professors';
     """
-
-    cur.execute(info_query)
-    
-    for row in cur.fetchall():
-        print(row)
 
     cur.execute(sql_script)
     conn.commit()

@@ -8,21 +8,21 @@ try:
     cur = conn.cursor()
 
     sql_script = """
-    -- Insert unique professors into the new table
-    INSERT INTO professors 
-    SELECT DISTINCT firstname, lastname, university_shortname 
+    -- Insert unique organizations into the new table
+    INSERT INTO organizations 
+    SELECT DISTINCT organization, organization_sector
     FROM university_professors;
     """
 
     info_query = """
     -- Print the contents of this table
     SELECT * 
-    FROM professors;
+    FROM organizations;
 
     -- Query the right table in information_schema to get columns
     SELECT column_name, data_type 
     FROM information_schema.columns 
-    WHERE table_name = 'professors' AND table_schema = 'dbo';
+    WHERE table_name = 'organizations' AND table_schema = 'dbo';
     """
 
     cur.execute(info_query)

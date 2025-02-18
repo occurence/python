@@ -30,7 +30,7 @@ try:
     -- Query the right table in information_schema to get columns
     SELECT column_name, data_type 
     FROM information_schema.columns 
-    WHERE table_name = 'cars' AND table_schema = 'dbo';
+    WHERE table_name = 'cars';
     """
 
     # cur.execute(info_query)

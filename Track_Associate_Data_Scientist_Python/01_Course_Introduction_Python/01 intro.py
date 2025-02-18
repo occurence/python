@@ -17,3 +17,5 @@ print(f"Multiplication: {fir} * {sec} = {fir*sec}")
 
 # Division
 print(f"Division: {fir} / {sec} = {fir/sec}")
+
+print("That's correct! Python can help you do the math, a characteristic that will be helpful for analysis as we grow our data skills.")

@@ -14,3 +14,5 @@ house = [["hallway", hall],
 # Print out house
 print(type(house))
 print(house)
+
+print("Great! Get ready to learn about list subsetting!")

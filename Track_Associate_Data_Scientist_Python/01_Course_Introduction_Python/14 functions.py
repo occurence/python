@@ -11,3 +11,5 @@ print(len(var1))
 # Convert var2 to an integer: out2
 out2 = int(var2)
 print(type(out2))
+
+print("Great job! The len() function is extremely useful; it also works on strings to count the number of characters!")

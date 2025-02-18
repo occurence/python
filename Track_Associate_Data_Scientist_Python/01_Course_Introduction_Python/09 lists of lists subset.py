@@ -6,3 +6,5 @@ house = [["hallway", 11.25],
 
 # Subset the house list
 house[4][1]
+
+print("Correctomundo! The last piece of the list puzzle is manipulation.")

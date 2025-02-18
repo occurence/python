@@ -10,3 +10,5 @@ areas = ["hallway", hall, "kitchen", kit, "living room", liv, "bedroom", bed, "b
 # Print areas
 print(type(areas))
 print(areas)
+
+print("Nice! This list contains both strings and floats, but that's not a problem for Python!")

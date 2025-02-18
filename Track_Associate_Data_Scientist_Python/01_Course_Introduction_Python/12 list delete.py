@@ -9,3 +9,5 @@ del areas[10]
 print(areas)
 # Print the updated list
 print(areas)
+
+print("Correct! You'll learn about easier ways to remove specific elements from Python lists later on.")

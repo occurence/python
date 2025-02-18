@@ -7,3 +7,5 @@ print(areas)
 # Change "living room" to "chill zone"
 areas[4]="chill zone"
 print(areas)
+
+print("Sweet! As the code sample showed, you can also slice a list and replace it with another list to update multiple elements in a single command.")

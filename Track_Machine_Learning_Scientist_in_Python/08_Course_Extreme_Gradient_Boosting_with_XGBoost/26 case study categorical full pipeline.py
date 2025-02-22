@@ -7,15 +7,15 @@ from sklearn.pipeline import Pipeline
 from sklearn.pipeline import FeatureUnion
 from sklearn.feature_extraction import DictVectorizer
 from sklearn.model_selection import cross_val_score
-
 from sklearn.base import BaseEstimator, TransformerMixin
 
-# Define Dictifier class to turn df into dictionary as part of pipeline
 class Dictifier(BaseEstimator, TransformerMixin):       
     def fit(self, X, y=None):
         return self
 
     def transform(self, X):
+        if isinstance(X, np.ndarray):
+            X = pd.DataFrame(X)
         return X.to_dict('records')
 
 kidney_data = pd.read_csv(r'D:\STUDY\python\Track_Machine_Learning_Scientist_in_Python\08_Course_Extreme_Gradient_Boosting_with_XGBoost\datasets\kidney.csv'
@@ -38,8 +38,8 @@ non_categorical_columns = X.columns[~categorical_feature_mask].tolist()
 # print(categorical_feature_mask)
 
 numeric_imputation_mapper = DataFrameMapper( [([numeric_feature], SimpleImputer(strategy="median")) for numeric_feature in non_categorical_columns], input_df=True, df_out=True )
-categorical_imputation_mapper = DataFrameMapper( [(category_feature, SimpleImputer(strategy="most_frequent")) for category_feature in categorical_columns], input_df=True, df_out=True )
-# print(categorical_imputation_mapper)
+# categorical_imputation_mapper = DataFrameMapper( [(category_feature, SimpleImputer(strategy="most_frequent")) for category_feature in categorical_columns], input_df=True, df_out=True )
+categorical_imputation_mapper = DataFrameMapper( [([category_feature], SimpleImputer(strategy="most_frequent")) for category_feature in categorical_columns], input_df=True, df_out=True )
 numeric_categorical_union = FeatureUnion([
                                           ("num_mapper", numeric_imputation_mapper),
                                           ("cat_mapper", categorical_imputation_mapper)
@@ -54,8 +54,8 @@ pipeline = Pipeline([
                     ])
 
 # Perform cross-validation
-cross_val_scores = cross_val_score(pipeline, kidney_data, y, scoring="roc_auc", cv=3)
-# cross_val_scores = cross_val_score(pipeline, X.to_dict("records"), y, scoring='roc_auc', cv=3)
+# cross_val_scores = cross_val_score(pipeline, kidney_data, y, scoring="roc_auc", cv=3)
+cross_val_scores = cross_val_score(pipeline, X, y, scoring="roc_auc", cv=3)
 
 # Print avg. AUC
 print("3-fold AUC: ", np.mean(cross_val_scores))

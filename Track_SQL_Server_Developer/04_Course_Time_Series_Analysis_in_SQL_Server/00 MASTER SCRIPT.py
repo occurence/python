@@ -17,6 +17,12 @@ scripts_to_run = [
     # "12 calendar table calendar year.py",
     # "13 calendar table fiscalyear.py",
     "13.5 schema migrate.py",
+    "14 calendar table join.py",
+    # "15 calendar table join filter.py",
+    # "16 datefromparts components.py",
+    # "17 datefromparts components filter.py",
+    # "18 datetime2fromparts.py",
+    # "19 datetimeoffsetfromparts.py",
 ]
 
 SCRIPT_DIR = "D:\\STUDY\\python\\Track_SQL_Server_Developer\\04_Course_Time_Series_Analysis_in_SQL_Server\\"

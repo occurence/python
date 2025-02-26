@@ -13,13 +13,11 @@ try:
     cursor = conn.cursor()
     
     sql_script = """
-    IF OBJECT_ID('dbo.IncidentRollup', 'U') IS NOT NULL
-        DROP TABLE dbo.IncidentRollup;
+    IF OBJECT_ID('dbo.Dates', 'U') IS NOT NULL
+        DROP TABLE dbo.Dates;
     
-    CREATE TABLE IncidentRollup(
-        IncidentDate DATE NOT NULL,
-        IncidentTypeID INT NOT NULL,
-        NumberOfIncidents INT NOT NULL
+    CREATE TABLE Dates(
+        DateText nvarchar(255)
     );
 
     """
@@ -28,25 +26,25 @@ try:
     conn.commit()
     
     # Load CSV into DataFrame
-    file_path = r"D:\\STUDY\\python\\Track_SQL_Server_Developer\\04_Course_Time_Series_Analysis_in_SQL_Server\\datasets\\IncidentRollupTable.csv"
+    file_path = r"D:\\STUDY\\python\\Track_SQL_Server_Developer\\04_Course_Time_Series_Analysis_in_SQL_Server\\datasets\\Dates.csv"
     df = pd.read_csv(file_path)
     
     # Insert data into SQL Server
     for index, row in df.iterrows():
         cursor.execute(
-            "INSERT INTO dbo.IncidentRollup (IncidentDate, IncidentTypeID, NumberOfIncidents) VALUES (?, ?, ?)",
-            row["IncidentDate"], row["IncidentTypeID"], row["NumberOfIncidents"]
+            "INSERT INTO dbo.Dates (DateText) VALUES (?)",
+            row["DateText"]
         )
     
     conn.commit()
     
     # Retrieve and print data
     info_query = """
-    SELECT * FROM dbo.IncidentRollup;
+    SELECT * FROM dbo.Dates;
     
     SELECT COLUMN_NAME, DATA_TYPE
     FROM INFORMATION_SCHEMA.COLUMNS
-    WHERE TABLE_NAME = 'IncidentRollup' AND TABLE_SCHEMA = 'dbo';
+    WHERE TABLE_NAME = 'Dates' AND TABLE_SCHEMA = 'dbo';
     """
     
     cursor.execute(info_query)

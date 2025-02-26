@@ -23,6 +23,11 @@ scripts_to_run = [
     # "17 datefromparts components filter.py",
     # "18 datetime2fromparts.py",
     # "19 datetimeoffsetfromparts.py",
+    "19.5 schema migrate.py",
+    # "20 datestring cast.py",
+    # "21 datestring convert.py",
+    "21.5 schema migrate.py",
+    # "22 datestring parse.py",
 ]
 
 SCRIPT_DIR = "D:\\STUDY\\python\\Track_SQL_Server_Developer\\04_Course_Time_Series_Analysis_in_SQL_Server\\"

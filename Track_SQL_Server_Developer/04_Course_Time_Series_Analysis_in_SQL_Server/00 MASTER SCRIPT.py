@@ -38,6 +38,10 @@ scripts_to_run = [
     # "29 typesafe try_cast.py",
     # "30 typesafe try_convert.py",
     # "31 typesafe try_parse.py",
+    "31.5 schema migrate.py",
+    # "32 aggregate timeframe.py",
+    # "33 aggregate count distinct.py",
+    # "34 aggregate filter case.py",
 ]
 
 SCRIPT_DIR = "D:\\STUDY\\python\\Track_SQL_Server_Developer\\04_Course_Time_Series_Analysis_in_SQL_Server\\"

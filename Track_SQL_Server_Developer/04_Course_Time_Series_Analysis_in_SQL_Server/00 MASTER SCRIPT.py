@@ -42,6 +42,16 @@ scripts_to_run = [
     # "32 aggregate timeframe.py",
     # "33 aggregate count distinct.py",
     # "34 aggregate filter case.py",
+    # "35 aggregate statistical functions.py",
+    # "36 aggregate median.py",
+    "36.5 schema migrate.py",
+    # "37 downsample day.py",
+    # "38 downsample week.py",
+    # "39 downsample calendar table.py",
+    # "40 group rollup.py",
+    # "41 group cube.py",
+    # "42 group grouping sets.py",
+    # "43 group multiple.py",
 ]
 
 SCRIPT_DIR = "D:\\STUDY\\python\\Track_SQL_Server_Developer\\04_Course_Time_Series_Analysis_in_SQL_Server\\"

@@ -52,6 +52,14 @@ scripts_to_run = [
     # "41 group cube.py",
     # "42 group grouping sets.py",
     # "43 group multiple.py",
+    # "44 window frequency.py",
+    # "45 window aggregate.py",
+    # "46 running total sum.py",
+    # "47 running total avg.py",
+    # "48 lag lead.py",
+    # "49 prior period.py",
+    # "50 elapsed between.py",
+    # "51-54 eventstream fraud analysis.py",
 ]
 
 SCRIPT_DIR = "D:\\STUDY\\python\\Track_SQL_Server_Developer\\04_Course_Time_Series_Analysis_in_SQL_Server\\"

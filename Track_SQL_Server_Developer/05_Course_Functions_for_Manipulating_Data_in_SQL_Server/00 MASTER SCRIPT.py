@@ -5,6 +5,11 @@ scripts_to_run = [
     "00.5 schema migrate ratings.py",
     "00.5 schema migrate voters.py", 
     "01 alter.py",
+    # "02 implicit conversion.py",
+    # "03 datatype precedence.py",
+    # "04 cast.py",
+    # "05 convert.py",
+    # "06 datatype.py",
 ]
 
 SCRIPT_DIR = "D:\\STUDY\\python\\Track_SQL_Server_Developer\\05_Course_Functions_for_Manipulating_Data_in_SQL_Server\\"

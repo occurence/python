@@ -1,9 +1,7 @@
 import pandas as pd
-from sklearn.model_selection import train_test_split
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
-from sklearn.ensemble import RandomForestClassifier
 
 ansur_df = pd.read_csv(r'D:\STUDY\python\Track_Machine_Learning_Scientist_in_Python\10_Course_Dimensionality_Reduction_in_Python\datasets\ANSUR_II_FEMALE.csv')
 ansur_df = ansur_df.drop(['Branch','Component','Gender','BMI_class','Height_class'], axis=1)

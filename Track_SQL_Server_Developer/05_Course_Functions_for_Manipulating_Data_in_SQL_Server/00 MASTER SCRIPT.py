@@ -41,6 +41,15 @@ scripts_to_run = [
     # "35 string function string_split sentence.py",
     # "36 string function string_split word.py",
     # "37 string function all applied function format.py",
+    # "38 arithmetic function count sum.py",
+    # "39 arithmetic function avg min max.py",
+    # "40 analytic function lead.py",
+    # "41 analytic function lag.py",
+    # "42 analytic function first last values.py",
+    # "43 mathematical function abs sign.py",
+    # "44 mathematical function round ceiling floor.py",
+    # "45 exponential function power square sqrt.py",
+    # "46 manipulating numeric data.py",
 ]
 
 SCRIPT_DIR = "D:\\STUDY\\python\\Track_SQL_Server_Developer\\05_Course_Functions_for_Manipulating_Data_in_SQL_Server\\"

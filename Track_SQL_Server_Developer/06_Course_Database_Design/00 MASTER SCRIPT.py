@@ -25,6 +25,12 @@ scripts_to_run = [
     "20 schema migrate snowflake country.py",
     # "21 join snowflake.py",
     "22 schema migrate snowflake continent.py",
+    "23 alter snowflake country.py",
+    "24 schema migrate normalization customers.py",
+    "25 normalization1.py",
+    "26 schema migrate normalization customer_rentals.py",
+    "27 normalization2.py",
+    "28 normalization3.py",
 ]
 
 SCRIPT_DIR = "D:\\STUDY\\python\\Track_SQL_Server_Developer\\06_Course_Database_Design\\"

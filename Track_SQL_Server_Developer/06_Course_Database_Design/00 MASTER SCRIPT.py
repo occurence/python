@@ -31,6 +31,13 @@ scripts_to_run = [
     "26 schema migrate normalization customer_rentals.py",
     "27 normalization2.py",
     "28 normalization3.py",
+    "29 schema migrate reviews.py",
+    "30 schema migrate content.py",
+    "31 schema migrate artists.py",
+    "32 schema migrate labels.py",
+    "33 schema migrate genres.py",
+    # "34 view view.py",
+    "35 view query.py",
 ]
 
 SCRIPT_DIR = "D:\\STUDY\\python\\Track_SQL_Server_Developer\\06_Course_Database_Design\\"

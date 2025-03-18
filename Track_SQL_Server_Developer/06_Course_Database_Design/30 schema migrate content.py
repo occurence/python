@@ -18,7 +18,7 @@ try:
     
     CREATE TABLE content (
         reviewid integer,
-        content text
+        content varchar(MAX)
     );
 
     """

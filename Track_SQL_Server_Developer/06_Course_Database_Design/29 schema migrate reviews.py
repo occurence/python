@@ -18,13 +18,13 @@ try:
     
     CREATE TABLE reviews (
         reviewid integer,
-        title text,
-        url text,
+        title varchar(MAX),
+        url varchar(MAX),
         score real,
         best_new_music integer,
-        author text,
-        author_type text,
-        pub_date text,
+        author varchar(MAX),
+        author_type varchar(MAX),
+        pub_date varchar(MAX),
         pub_weekday integer,
         pub_day integer,
         pub_month integer,

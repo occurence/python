@@ -18,7 +18,7 @@ try:
     
     CREATE TABLE artists (
         reviewid integer,
-        artist text
+        artist varchar(MAX)
     );
 
     """

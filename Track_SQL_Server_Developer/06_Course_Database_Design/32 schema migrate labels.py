@@ -18,7 +18,7 @@ try:
     
     CREATE TABLE labels (
         reviewid integer,
-        label text
+        label varchar(MAX)
     );
 
     """

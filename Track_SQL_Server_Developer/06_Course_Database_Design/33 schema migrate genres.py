@@ -18,7 +18,7 @@ try:
     
     CREATE TABLE genres (
         reviewid integer,
-        genre text
+        genre varchar(100) NOT NULL
     );
 
     """
@@ -34,7 +34,7 @@ try:
     for index, row in df.iterrows():
         cursor.execute(
             "INSERT INTO dbo.genres(reviewid,genre) VALUES(?,?)",
-            row["reviewid"], row["genre"] if pd.notna(row["genre"]) else None
+            row["reviewid"], row["genre"] if pd.notna(row["genre"]) else "null"
         )
     
     conn.commit()

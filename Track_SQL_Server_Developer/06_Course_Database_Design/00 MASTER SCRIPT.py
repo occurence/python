@@ -47,6 +47,9 @@ scripts_to_run = [
     "41 view materialized.py",
     "42 view materialized refresh.py",
     "50 role.py",
+    "51 schema migrate film.py",
+    "52 partition vertical film.py",
+    "53 partition horizontal.py",
 ]
 
 SCRIPT_DIR = "D:\\STUDY\\python\\Track_SQL_Server_Developer\\06_Course_Database_Design\\"

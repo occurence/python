@@ -38,6 +38,14 @@ scripts_to_run = [
     "33 schema migrate genres.py",
     # "34 view view.py",
     "35 view query.py",
+    "36 view create.py",
+    "37 view join.py",
+    "38 view drop cascade.py",
+    "38 view drop cascade.py",
+    "39 view access.py",
+    "40 view redefine.py",
+    "41 view materialized.py",
+    "42 view materialized refresh.py",
 ]
 
 SCRIPT_DIR = "D:\\STUDY\\python\\Track_SQL_Server_Developer\\06_Course_Database_Design\\"

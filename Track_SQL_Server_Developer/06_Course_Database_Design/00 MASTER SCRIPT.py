@@ -46,6 +46,7 @@ scripts_to_run = [
     "40 view redefine.py",
     "41 view materialized.py",
     "42 view materialized refresh.py",
+    "50 role.py",
 ]
 
 SCRIPT_DIR = "D:\\STUDY\\python\\Track_SQL_Server_Developer\\06_Course_Database_Design\\"

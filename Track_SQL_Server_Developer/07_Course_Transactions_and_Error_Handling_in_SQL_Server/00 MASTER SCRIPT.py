@@ -13,6 +13,8 @@ scripts_to_run = [
     "08 errors compilation.py",
     "09 errors function.py",
     "10 errors function nested.py",
+    "11 errors cast.py",
+    "12 errors function nested.py",
 ]
 
 SCRIPT_DIR = "D:\\STUDY\\python\\Track_SQL_Server_Developer\\07_Course_Transactions_and_Error_Handling_in_SQL_Server\\"

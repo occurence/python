@@ -1,3 +1,5 @@
+DROP PROCEDURE IF EXISTS insert_product;
+GO
 CREATE PROCEDURE insert_product
   @product_name VARCHAR(50),
   @stock INT,

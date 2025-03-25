@@ -11,7 +11,7 @@ ELSE
 -- Click Run Code (not Submit Answer) to see the error.
 -- Set @product_id back to 5.
 -- Change the value
-DECLARE @product_id INT = 5;
+DECLARE @product_id INT = 50;
 
 IF NOT EXISTS (SELECT * FROM products WHERE product_id = @product_id)
 	RAISERROR('No product with id %d.', 11, 1, @product_id);

@@ -14,3 +14,5 @@ BEGIN CATCH
     -- Select the message of the error
     SELECT ERROR_MESSAGE() AS Error_message;
 END CATCH
+
+-- SELECT * FROM customers WHERE email IN('markdavis@mail.com', 'dylansmith@mail.com');

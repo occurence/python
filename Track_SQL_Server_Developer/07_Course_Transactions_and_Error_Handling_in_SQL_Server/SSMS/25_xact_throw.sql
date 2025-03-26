@@ -9,4 +9,6 @@ BEGIN TRAN;
 		THROW 55000, 'Not enough wealthy customers!', 1;
 	ELSE		
     	-- Commit the transaction
-		COMMIT TRAN; 
+		COMMIT TRAN;
+
+-- SELECT * FROM accounts WHERE current_balance > 5000000;

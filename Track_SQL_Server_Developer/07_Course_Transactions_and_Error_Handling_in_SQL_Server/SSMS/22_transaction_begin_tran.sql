@@ -15,3 +15,5 @@ BEGIN TRAN;
 			COMMIT TRAN; 
 			SELECT 'Updates commited'; 
 		END
+
+-- SELECT * FROM accounts WHERE current_balance < 5000;

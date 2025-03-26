@@ -17,3 +17,5 @@ BEGIN TRAN;
 	INSERT INTO customers VALUES ('Jeremy', 'Johnsson', 'jeremyjohnsson@mail.com', '555929292');
 -- Commit the transaction
 COMMIT TRAN;
+
+-- SELECT * FROM customers WHERE email IN('markdavis@mail.com', 'zackroberts@mail.com', 'jeremyjohnsson@mail.com');

@@ -15,3 +15,5 @@ BEGIN CATCH
     -- Rollback the transaction
 	ROLLBACK TRAN;
 END CATCH
+
+-- SELECT * FROM transactions;

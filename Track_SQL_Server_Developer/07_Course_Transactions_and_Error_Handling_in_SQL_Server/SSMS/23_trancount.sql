@@ -19,3 +19,5 @@ BEGIN CATCH
     	-- Rollback the transaction
         ROLLBACK TRAN;
 END CATCH
+
+-- SELECT * FROM accounts WHERE account_id = 10;

@@ -36,6 +36,12 @@ scripts_to_run = [
     # "25 transaction xact throw.py",
     # "26.1 transaction xact doom XACT_STATE.py",
     # "26.2 transaction xact doom no XACT_STATE.py",
+    # "27 isolation read uncommitted.py",
+    # "28 isolation read committed.py",
+    # "29 isolation repeatable read.py",
+    # "30 isolation serializable table.py",
+    # "31 isolation serializable range.py",
+    # "32 isolation nolock.py",
 ]
 
 SCRIPT_DIR = "D:\\STUDY\\python\\Track_SQL_Server_Developer\\07_Course_Transactions_and_Error_Handling_in_SQL_Server\\"

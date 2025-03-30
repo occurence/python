@@ -22,9 +22,18 @@ scripts_to_run = [
     # "18 function scalar exec.py",
     # "19 function table variable.py",
     "20 function schemabinding create or alter.py",
+    "21 procedure read.py",
+    "22 procedure create.py",
+    "23 procedure update.py",
+    "24 procedure delete.py",
+    # "25 exec output.py",
+    # "26 exec return.py",
+    # "27 exec output return.py", #
+    "28 procedure delete try.py",
+    "29 procedure delete catch.py",
 ]
 
-SCRIPT_DIR = "D:\\STUDY\\python\\Track_SQL_Server_Developer\\07_Course_Transactions_and_Error_Handling_in_SQL_Server\\"
+SCRIPT_DIR = "D:\\STUDY\\python\\Track_SQL_Server_Developer\\08_Course_Writing_Functions_and_Stored_Procedures_in_SQL_Server\\"
 
 # Execute each script in the list
 for script in scripts_to_run:
@@ -38,7 +47,7 @@ for script in scripts_to_run:
 
 """
 import os
-extract_path = r"D:\STUDY\python\Track_SQL_Server_Developer\07_Course_Transactions_and_Error_Handling_in_SQL_Server"
+extract_path = r"D:\STUDY\python\Track_SQL_Server_Developer\08_Course_Writing_Functions_and_Stored_Procedures_in_SQL_Server"
 os.makedirs(extract_path, exist_ok=True)
 import os
 extracted_files = os.listdir(extract_path)

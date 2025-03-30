@@ -5,12 +5,6 @@ conn = pyodbc.connect( "DRIVER={SQL Server};" "SERVER=Arc-PC;" "DATABASE=Databas
 cursor = conn.cursor()
 
 cursor.execute("""
--- Drop cuspRideSummaryUpdate
-DROP PROCEDURE IF EXISTS cuspRideSummaryUpdate;
-""")
-conn.commit()
-
-cursor.execute("""
 -- Alter the stored procedure
 CREATE OR ALTER PROCEDURE dbo.cuspRideSummaryDelete
 	-- (Incorrectly) specify @DateParm

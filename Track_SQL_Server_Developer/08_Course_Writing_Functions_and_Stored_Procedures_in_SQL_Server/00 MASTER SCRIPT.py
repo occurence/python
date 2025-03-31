@@ -31,6 +31,20 @@ scripts_to_run = [
     # "27 exec output return.py", #
     "28 procedure delete try.py",
     "29 procedure delete catch.py",
+    "30 schema migrate YellowTripData.py",
+    # "31 case study impossible scenarios.py",
+    "32 case study procedure cuspImputeTripDistanceMean.py",
+    "33 case study procedure GetTripDistanceHotDeck.py",
+    "34 case study function ConvertMileToKm.py",
+    "35 case study function ConvertDollar.py",
+    "36 case study function GetShiftNumber.py",
+    # "37 case study function test.py",
+    # "38 case study procedure test hotdeck.py",
+    "39 schema migrate TaxiZoneLookup.py",
+    "40 case study procedure cuspBoroughRideStats.py",
+    # "41 case study procedure test table.py",
+    "42 case study procedure cuspPickupZoneShiftStats.py",
+    # "43 case study procedure test.py",
 ]
 
 SCRIPT_DIR = "D:\\STUDY\\python\\Track_SQL_Server_Developer\\08_Course_Writing_Functions_and_Stored_Procedures_in_SQL_Server\\"

@@ -6,8 +6,17 @@ scripts_to_run = [
     "02 schema migrate orders.py",
     "03 schema migrate products.py",
     "04 schema migrate productshistory.py",
-    "10 schema migrate saleswithprice.py",
-    "12 schema migrate saleswithoutprice.py",
+    "05 trigger instead PreventDiscountsDelete.py",
+    "06 trigger after OrdersUpdatedRows.py",
+    "07 trigger after ProductsNewItems.py",
+    "08 procedure MonthlyOrders.py",
+    "09 schema migrate discountshistory.py",
+    "10 trigger after CustomerDiscountHistory.py",
+    "11 schema migrate saleswithprice.py",
+    "12 trigger after SalesCalculateTotalAmount.py",
+    "13 schema migrate saleswithoutprice.py",
+    "14 insert saleswithprice.py",#
+    "15 insert saleswithoutprice.py",#
 ]
 
 SCRIPT_DIR = "D:\\STUDY\\python\\Track_SQL_Server_Developer\\09_Course_Building_and_Optimizing_Triggers_in_SQL_Server\\"

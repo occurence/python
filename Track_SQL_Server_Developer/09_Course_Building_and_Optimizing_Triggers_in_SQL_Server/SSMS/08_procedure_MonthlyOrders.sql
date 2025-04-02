@@ -1,5 +1,5 @@
 -- Create the stored procedure
-DROP TRIGGER IF EXISTS MonthlyOrders;
+DROP PROCEDURE IF EXISTS MonthlyOrders;
 GO
 CREATE PROCEDURE [MonthlyOrders]
 AS

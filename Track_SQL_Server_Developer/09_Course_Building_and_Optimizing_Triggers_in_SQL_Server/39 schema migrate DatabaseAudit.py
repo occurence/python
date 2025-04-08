@@ -24,7 +24,7 @@ try:
         Object nvarchar(100),
         ObjectType nvarchar(50),
         UserAccount nvarchar(100),
-        Query nvarchar(-1),
+        Query nvarchar(MAX),
         EventTime datetime
     );
     """

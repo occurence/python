@@ -33,6 +33,10 @@ scripts_to_run = [
     "29 schema migrate serverlogonlog.py",
     "30 insert ServerLogonLog.py",
     # "31 trigger for LogonAudit server.py",#
+    # "32 trigger directory.py",
+    "33 schema migrate CustomersHistory.py",
+    "35 schema migrate TablesAudit.py",
+    "39 schema migrate DatabaseAudit.py",
 ]
 
 SCRIPT_DIR = "D:\\STUDY\\python\\Track_SQL_Server_Developer\\09_Course_Building_and_Optimizing_Triggers_in_SQL_Server\\"

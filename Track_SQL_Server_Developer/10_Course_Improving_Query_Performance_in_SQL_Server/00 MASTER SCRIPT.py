@@ -8,6 +8,8 @@ scripts_to_run = [
     "08 schema migrate Earthquakes.py",
     "09 schema migrate Nations.py",
     "10 schema migrate Cities.py",
+    "44 schema migrate Orders.py",
+    "45 schema migrate Customers.py",
 ]
 
 SCRIPT_DIR = "D:\\STUDY\\python\\Track_SQL_Server_Developer\\10_Course_Improving_Query_Performance_in_SQL_Server\\"

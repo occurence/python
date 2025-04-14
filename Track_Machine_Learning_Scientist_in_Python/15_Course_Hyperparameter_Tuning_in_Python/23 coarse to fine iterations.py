@@ -47,7 +47,7 @@ def visualize_second():
     plt.show()
 
 # Use the provided function to visualize the first results
-# visualize_first()
+visualize_first()
 
 # Create some combinations lists & combine:
 max_depth_list = list(range(1,21))

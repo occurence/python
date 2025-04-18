@@ -26,3 +26,9 @@ plt.hist(line_num_words)
 
 # Show the plot
 plt.show()
+
+for i, tokens in enumerate(tokenized_lines):
+    if tokens:
+        print(f"Line {i + 1}:")
+        print(f"Words: {tokens}")
+        print(f"Number of words: {len(tokens)}\n")

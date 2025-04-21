@@ -1,0 +1,15 @@
+USE master;
+GO
+
+IF DB_ID('DatabaseDesign') IS NOT NULL
+BEGIN
+    ALTER DATABASE DatabaseDesign SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+    DROP DATABASE DatabaseDesign;
+END
+GO
+
+DROP DATABASE IF EXISTS DatabaseDesign;
+GO
+
+CREATE DATABASE DatabaseDesign;
+GO

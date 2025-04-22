@@ -10,5 +10,5 @@ document = nlp(text)
 first_text_tokens = [token.text for token in document]
 print("First text tokens:\n", first_text_tokens, "\n")
 
-displacy.serve(document, style='ent')
+# displacy.serve(document, style='ent')
 displacy.serve(document, style='dep')

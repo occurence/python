@@ -12,6 +12,7 @@
 
 # import spacy.cli
 # spacy.cli.download("en_core_web_sm")
+# spacy.cli.download("en_core_web_md")
 
-import nltk
-nltk.download('all')
+# import nltk
+# nltk.download('all')

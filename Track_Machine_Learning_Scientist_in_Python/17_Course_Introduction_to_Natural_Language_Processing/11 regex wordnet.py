@@ -10,9 +10,10 @@
 # nltk.download('punkt_tab')
 # nltk.download('popular')  # downloads all the commonly used datasets/tools
 
-# import spacy.cli
+import spacy.cli
 # spacy.cli.download("en_core_web_sm")
 # spacy.cli.download("en_core_web_md")
+spacy.cli.download("en_core_web_lg")
 
 # import nltk
 # nltk.download('all')

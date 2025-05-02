@@ -1,8 +1,0 @@
-customer_id,car_id,start_date,end_date,model,manufacturer,type_car,condition,color
-1453,4KL298,2019-01-08,2019-01-10, Golf 2017, Volkswagen, hatchback, fair, blue
-1454,5PL4YY,2019-03-18,2019-03-21, Camaro 2019, Chevrolet, convertible, excellent, red
-1455,5H9OP5,2019-04-14,2019-04-14, CRV 2018, Honda, SUV, good, grey
-1455,5H9OP5,2019-05-02,2019-05-16, CRV 2018, Honda, SUV, good, grey
-1455,499ERW,2019-01-12,2019-01-13, CRV 2018, Honda, SUV, excellent, black
-1456,4KL298,2019-02-17,2019-02-22, Golf 2017, Volkswagen, hatchback, fair, blue
-1456,4KL298,2019-03-05,2019-03-20, Golf 2017, Volkswagen, hatchback, fair, blue

@@ -22,7 +22,6 @@ Thumbs.db
 
 # Common logs or outputs
 *.log
-*.csv
 *.tsv
 *.pkl
 *.h5

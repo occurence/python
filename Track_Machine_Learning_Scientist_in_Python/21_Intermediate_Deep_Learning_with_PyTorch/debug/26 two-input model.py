@@ -6,16 +6,26 @@ from PIL import Image
 from torch.utils.data import DataLoader, Dataset
 from torchvision import transforms
 
+# samples = [('D:\STUDY\python\Track_Machine_Learning_Scientist_in_Python\21_Intermediate_Deep_Learning_with_PyTorch\datasets\omniglot_train\Gujarati\character42\0459_16.png',
+#   np.array([1., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+#          0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.], dtype='float32'),
+#   0),
+#  ('D:\STUDY\python\Track_Machine_Learning_Scientist_in_Python\21_Intermediate_Deep_Learning_with_PyTorch\datasets\omniglot_train\Gujarati\character42\0459_02.png',
+#   np.array([1., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+#          0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.], dtype='float32'),
+#   0)]
+
 df = pd.read_csv(r'D:\STUDY\python\Track_Machine_Learning_Scientist_in_Python\21_Intermediate_Deep_Learning_with_PyTorch\datasets\omniglot_samples.csv')
+# samples = samples.values.tolist()
 samples = [
     (
         row[0],  # image path
-        np.array(row[1:-1], dtype='float32'),
+        np.array(row[1:-1], dtype='float32'),  # one-hot encoded vector
         int(row[-1])  # class label
     )
     for row in df.values
 ]
-
+print(samples[:10])
 class Net(nn.Module):
     def __init__(self):
         super().__init__()

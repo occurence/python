@@ -10,6 +10,8 @@ def show_image(image, title='Image', cmap_type='gray'):
 
 fruits_image = plt.imread(r'D:\STUDY\python\Track_Machine_Learning_Scientist_in_Python\22_Image_Processing_in_Python\datasets\Image Processing with Python course exercise dataset\chapter 1\fruits-2.jpg')
 
+show_image(fruits_image)
+
 # Import the try all function
 from skimage.filters import try_all_threshold
 

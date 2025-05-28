@@ -20,6 +20,8 @@ global_thresh = threshold_otsu(page_image)
 # Obtain the binary image by applying global thresholding
 binary_global = page_image > global_thresh
 
+show_image(page_image)
+
 # Show the binary image obtained
 show_image(binary_global, 'Global thresholding')
 

@@ -23,6 +23,8 @@ thresh = threshold_otsu(gray_tools_image)
 # Obtain the binary image by applying thresholding
 binary_image = gray_tools_image > thresh
 
+show_image(tools_image)
+
 # Show the resulting binary image
 show_image(binary_image, 'Binarized image')
 

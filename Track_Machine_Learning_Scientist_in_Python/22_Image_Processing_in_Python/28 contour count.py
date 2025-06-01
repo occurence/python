@@ -21,6 +21,7 @@ def show_image_contour(image, contours):
     plt.show()
 
 image_dice = plt.imread(r'D:\STUDY\python\Track_Machine_Learning_Scientist_in_Python\22_Image_Processing_in_Python\datasets\Image Processing with Python course exercise dataset\chapter 3\dices.png')
+show_image(image_dice)
 image_dice = image_dice[:, :, :3]
 
 # Make the image grayscale

@@ -23,6 +23,7 @@ def show_image_with_corners(image, coords, title="Corners detected"):
     plt.close()
 
 building_image = plt.imread(r'D:\STUDY\python\Track_Machine_Learning_Scientist_in_Python\22_Image_Processing_in_Python\datasets\Image Processing with Python course exercise dataset\chapter 4\corners_building_top.jpg')
+show_image(building_image, "Original")
 building_image = rgb2gray(building_image)
 measure_image = corner_harris(building_image)
 
@@ -33,8 +34,6 @@ print("With a min_distance set to 10, we detect a total", len(coords_w_min_10), 
 # Find the peaks with a min distance of 60 pixels
 coords_w_min_60 = corner_peaks(measure_image, min_distance=60, threshold_rel=0.02)
 print("With a min_distance set to 60, we detect a total", len(coords_w_min_60), "corners in the image.")
-
-show_image(building_image, "Original")
 
 # Show original and resulting image with corners detected
 show_image_with_corners(building_image, coords_w_min_10, "Corners detected with 10 px of min_distance")

@@ -50,6 +50,7 @@ def show_detected_face(result, detected, title="Face image"):
     crop_face(result, detected)
 
 friends_image = plt.imread(r'D:\STUDY\python\Track_Machine_Learning_Scientist_in_Python\22_Image_Processing_in_Python\datasets\Image Processing with Python course exercise dataset\chapter 4\face_det_friends22.jpg')
+show_image(friends_image)
 
 # Load the trained file from data
 trained_file = data.lbp_frontal_face_cascade_filename()

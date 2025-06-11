@@ -29,7 +29,24 @@ model_data = planes.withColumn("plane_year", planes.plane_year.cast("integer"))
 
 model_data = flights.join(planes, on="tailnum", how="leftouter")
 
-# Create the column plane_age
 model_data = model_data.withColumn("plane_age", flights.year - planes.plane_year)
 
-model_data.show()
+# Create is_late
+model_data = model_data.withColumn("is_late", model_data.arr_delay > 0)
+
+# Convert to an integer
+model_data = model_data.withColumn("label", model_data.is_late.cast("integer"))
+
+# Remove missing values
+model_data = model_data.filter("arr_delay is not NULL and dep_delay is not NULL and air_time is not NULL and plane_year is not NULL")
+
+# model_data.show()
+
+from pyspark.ml.feature import StringIndexer
+from pyspark.ml.feature import OneHotEncoder
+
+# Create a StringIndexer
+carr_indexer = StringIndexer(inputCol="carrier", outputCol="carrier_index")
+
+# Create a OneHotEncoder
+carr_encoder = OneHotEncoder(inputCol="carrier_index", outputCol="carrier_fact")

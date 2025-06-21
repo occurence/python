@@ -6,7 +6,7 @@ spark = SparkSession.builder \
                     .getOrCreate()
 
 # Read data from CSV file
-flights = spark.read.csv(r'D:\STUDY\python\Track_Machine_Learning_Scientist_in_Python\24_Course_Machine_Learning_with_PySpark\datasets\flights.csv',
+flights = spark.read.csv(r'D:\STUDY\python\Track_Machine_Learning_Scientist_in_Python\24_Course_Machine_Learning_with_PySpark\datasets\flights_smaller.csv',
                          sep=',',
                          header=True,
                          inferSchema=True,

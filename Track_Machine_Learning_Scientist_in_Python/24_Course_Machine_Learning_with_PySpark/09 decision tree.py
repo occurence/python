@@ -53,4 +53,38 @@ flights_indexed = indexer_model.transform(flights_km)
 flights_indexed = StringIndexer(inputCol='org', outputCol='org_idx').fit(flights_indexed).transform(flights_indexed)
 flights_indexed.show(5)
 
+# Import the necessary class
+from pyspark.ml.feature import VectorAssembler
+
+# Create an assembler object
+assembler = VectorAssembler(inputCols=[
+    'mon','dom','dow','carrier_idx','org_idx','km','depart','duration'
+], outputCol='features')
+
+# Consolidate predictor columns
+flights_assembled = assembler.transform(flights_indexed)
+
+# Check the resulting column
+flights_assembled.select('features', 'delay').show(5, truncate=False)
+
+flights_assembled.select('mon','dom','dow','carrier_idx','org_idx','km','depart','duration', 'features', 'delay').show(5, truncate=False)
+
+# Split into training and testing sets in a 80:20 ratio
+flights_train, flights_test = flights_assembled.randomSplit([0.8, 0.2], seed=43)
+
+# Check that training set has around 80% of records
+training_ratio = flights_train.count() / flights_assembled.count()
+print(training_ratio)
+
+# Import the Decision Tree Classifier class
+from pyspark.ml.classification import DecisionTreeClassifier
+
+# Create a classifier object and fit to the training data
+tree = DecisionTreeClassifier()
+tree_model = tree.fit(flights_train)
+
+# Create predictions for the testing data and take a look at the predictions
+prediction = tree_model.transform(flights_test)
+prediction.select('label', 'prediction', 'probability').show(5, False)
+
 spark.stop()

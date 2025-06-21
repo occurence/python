@@ -29,7 +29,7 @@ print(flights_none_missing.count())
 from pyspark.sql.functions import round, when
 
 # Convert 'mile' to 'km' and drop 'mile' column (1 mile is equivalent to 1.60934 km)
-flights_km = flights.withColumn('km', round(flights.mile * 1.60934, 0)) \
+flights_km = flights_none_missing.withColumn('km', round(flights_none_missing.mile * 1.60934, 0)) \
                     .drop('mile')
 
 # Create 'label' column indicating whether flight delayed (1) or not (0)

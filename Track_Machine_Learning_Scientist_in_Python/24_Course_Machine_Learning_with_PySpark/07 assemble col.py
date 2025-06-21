@@ -53,4 +53,20 @@ flights_indexed = indexer_model.transform(flights_km)
 flights_indexed = StringIndexer(inputCol='org', outputCol='org_idx').fit(flights_indexed).transform(flights_indexed)
 flights_indexed.show(5)
 
+# Import the necessary class
+from pyspark.ml.feature import VectorAssembler
+
+# Create an assembler object
+assembler = VectorAssembler(inputCols=[
+    'mon','dom','dow','carrier_idx','org_idx','km','depart','duration'
+], outputCol='features')
+
+# Consolidate predictor columns
+flights_assembled = assembler.transform(flights_indexed)
+
+# Check the resulting column
+flights_assembled.select('features', 'delay').show(5, truncate=False)
+
+flights_assembled.select('mon','dom','dow','carrier_idx','org_idx','km','depart','duration', 'features', 'delay').show(5, truncate=False)
+
 spark.stop()

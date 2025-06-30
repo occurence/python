@@ -89,6 +89,8 @@ cv = cv.fit(flights_train)
 
 # NOTE: Since cross-valdiation builds multiple models, the fit() method can take a little while to complete.
 
+print("Average cross-validated RMSE:", cv.avgMetrics)
+
 flights_train.show(5)
 flights_test.show(5)
 

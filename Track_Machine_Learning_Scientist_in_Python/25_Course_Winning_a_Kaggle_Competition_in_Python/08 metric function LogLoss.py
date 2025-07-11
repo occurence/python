@@ -13,7 +13,7 @@ def own_logloss(y_true, prob_pred):
     return -err
 
 y_classification_true = pd.read_csv(r'D:\STUDY\python\Track_Machine_Learning_Scientist_in_Python\25_Course_Winning_a_Kaggle_Competition_in_Python\datasets\classification_true.csv', header=None).to_numpy()
-y_classification_pred = pd.read_csv(r'D:\STUDY\python\Track_Machine_Learning_Scientist_in_Python\25_Course_Winning_a_Kaggle_Competition_in_Python\datasets\regression_predict.csv', header=None).to_numpy()
+y_classification_pred = pd.read_csv(r'D:\STUDY\python\Track_Machine_Learning_Scientist_in_Python\25_Course_Winning_a_Kaggle_Competition_in_Python\datasets\classification_pred.csv', header=None).to_numpy()
 
 print('Sklearn LogLoss: {:.5f}'.format(log_loss(y_classification_true, y_classification_pred)))
 print('Your LogLoss: {:.5f}'.format(own_logloss(y_classification_true, y_classification_pred)))

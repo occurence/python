@@ -29,6 +29,7 @@ def haversine_distance(train):
 
 train = pd.read_csv(r'D:\STUDY\python\Track_Machine_Learning_Scientist_in_Python\25_Course_Winning_a_Kaggle_Competition_in_Python\datasets\taxi_train_chapter_4.csv')
 test = pd.read_csv(r'D:\STUDY\python\Track_Machine_Learning_Scientist_in_Python\25_Course_Winning_a_Kaggle_Competition_in_Python\datasets\taxi_test_chapter_4.csv')
+train = train.iloc[:1000]
 
 # Calculate the ride distance
 train['distance_km'] = haversine_distance(train)

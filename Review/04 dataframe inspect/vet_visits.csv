@@ -1,0 +1,12 @@
+id,date,name,breed,weight_kg
+0,2018-09-02,Bella,Labrador,24.87
+1,2019-06-07,Max,Labrador,28.35
+2,2018-01-17,Stella,Chihuahua,1.51
+3,2019-10-19,Lucy,Chow Chow,24.07
+4,2019-03-19,Charlie,Poodle,24.95
+5,2019-03-30,Cooper,Schnauzer,16.91
+6,2019-01-04,Bernie,St. Bernard,74.98
+71,2018-01-20,Stella,Chihuahua,2.83
+72,2019-06-07,Max,Chow Chow,24.01
+73,2018-08-20,Lucy,Chow Chow,24.40
+74,2019-04-22,Max,Labrador,28.54

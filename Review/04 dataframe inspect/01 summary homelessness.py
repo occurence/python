@@ -38,3 +38,24 @@ high_homelessness = homelessness[homelessness['indiv_per_10k'] > 20]
 high_homelessness_srt = high_homelessness.sort_values('indiv_per_10k', ascending=False)
 result = high_homelessness_srt[['state','indiv_per_10k']]
 print(result)
+
+# Summary Statistics
+print(homelessness['state_pop'].mean())
+print(homelessness['state_pop'].median())
+# Aggregate Functions
+def iqr(column):
+    return column.quantile(0.75) - column.quantile(0.25)
+print(homelessness[["individuals", "family_members", "state_pop"]].agg([iqr,'median']))
+
+# Cumulative Statistics
+homelessness_atlantic = homelessness[(homelessness['region'] == 'South Atlantic') | (homelessness['region'] == 'Mid-Atlantic')]
+homelessness_atlantic = homelessness_atlantic.sort_values('state_pop', ascending=True)
+homelessness_atlantic['cum_state_pop'] = homelessness_atlantic['state_pop'].cumsum()
+homelessness_atlantic['cum_max_state_pop'] = homelessness_atlantic['state_pop'].cummax()
+print(homelessness_atlantic[["region","state","state_pop", "cum_state_pop", "cum_max_state_pop"]])
+
+# Count, Remove Duplicates and Categorical
+unique_locs = homelessness.drop_duplicates(subset=['region','state'])
+print(unique_locs)
+print(unique_locs['region'].value_counts(sort=True))
+print(unique_locs['region'].value_counts(normalize=True))

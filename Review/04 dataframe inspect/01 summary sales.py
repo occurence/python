@@ -62,3 +62,10 @@ sales_stats = sales.groupby(['type'])['weekly_sales'].agg(['min','max','mean','m
 print(sales_stats)
 unemp_fuel_stats = sales.groupby(['type'])[['unemployment','fuel_price_usd_per_l']].agg(['min','max','mean','median'])
 print(unemp_fuel_stats)
+
+# Pivot
+print(sales.pivot_table(values='weekly_sales', index='type'))
+print(sales.pivot_table(values='weekly_sales', index='type', aggfunc=['mean','median']))
+print(sales.pivot_table(values='weekly_sales', index='type', columns='is_holiday'))
+print(sales.pivot_table(values='weekly_sales', index='type', columns='department', fill_value=0))
+print(sales.pivot_table(values="weekly_sales", index="department", columns="type", fill_value=0, margins=True))

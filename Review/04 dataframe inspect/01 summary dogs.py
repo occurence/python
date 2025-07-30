@@ -60,3 +60,22 @@ unique_dogs = vet.drop_duplicates(subset=['name','breed'])
 print(unique_dogs)
 print(unique_dogs['breed'].value_counts(sort=True))
 print(unique_dogs['breed'].value_counts(normalize=True))
+
+# Manual Grouped Summary Statistics
+print(dogs[dogs['color'] == 'Black']['weight_kg'].mean())
+print(dogs[dogs['color'] == 'Brown']['weight_kg'].mean())
+print(dogs[dogs['color'] == 'White']['weight_kg'].mean())
+print(dogs[dogs['color'] == 'Gray']['weight_kg'].mean())
+print(dogs[dogs['color'] == 'Tan']['weight_kg'].mean())
+
+# Grouped Summary Statistics
+print(dogs.groupby('color')['weight_kg'].mean())
+
+# Grouped Summary Statistics Agg
+print(dogs.groupby('color')['weight_kg'].agg(['min','max','sum']))
+print(dogs.groupby(['color','breed'])[['weight_kg','height_cm']].agg(['min','max','sum']))
+
+# Pivot
+print(dogs.pivot_table(values='weight_kg', index='color'))
+print(dogs.pivot_table(values='weight_kg', index='color', aggfunc=['mean','median']))
+print(dogs.pivot_table(values='weight_kg', index='color', columns='breed', fill_value=0, margins=True))

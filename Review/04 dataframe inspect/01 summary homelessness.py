@@ -59,3 +59,21 @@ unique_locs = homelessness.drop_duplicates(subset=['region','state'])
 print(unique_locs)
 print(unique_locs['region'].value_counts(sort=True))
 print(unique_locs['region'].value_counts(normalize=True))
+
+# Manual Grouped Summary Statistics
+print(homelessness[homelessness['region'] == 'East North Central']['state_pop'].mean())
+print(homelessness[homelessness['region'] == 'East South Central']['state_pop'].mean())
+print(homelessness[homelessness['region'] == 'West North Central']['state_pop'].mean())
+print(homelessness[homelessness['region'] == 'West South Central']['state_pop'].mean())
+
+# # Grouped Summary Statistics
+print(homelessness.groupby('region')['state_pop'].sum())
+
+# # Grouped Summary Statistics Agg
+print(homelessness.groupby('region')['state_pop'].agg(['min','max','sum']))
+print(homelessness.groupby(['region','state'])[['state_pop','individuals']].agg(['min','max','sum']))
+
+# Pivot
+print(homelessness.pivot_table(values='state_pop', index='region'))
+print(homelessness.pivot_table(values='state_pop', index='region', aggfunc=['mean','median']))
+print(homelessness.pivot_table(values='state_pop', index='region', columns='state', fill_value=0, margins=True))

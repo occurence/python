@@ -23,7 +23,7 @@ print(dogs.sort_values('breed', ascending=False).head(5))
 # Subset Cols
 print(dogs[['birth','height_cm']])
 # Subset Rows
-print(dogs[(dogs['breed'] < 'Labrador') & (dogs['color'] == 'Black')])
+print(dogs[(dogs['breed'] == 'Labrador') & (dogs['color'] == 'Black')])
 # Subset Rows isin Categorical Variables
 canu = ["Labrador", "Poodle", "Chihuahua"]
 print(dogs[dogs['breed'].isin(canu)])

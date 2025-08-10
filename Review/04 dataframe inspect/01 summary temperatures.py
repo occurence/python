@@ -79,3 +79,60 @@ print(temperatures.groupby(['country','city'])[['avg_temp_c']].agg(['min','max',
 print(temperatures.pivot_table(values='avg_temp_c', index='city'))
 print(temperatures.pivot_table(values='avg_temp_c', index='city', aggfunc=['mean','median']))
 print(temperatures.pivot_table(values='avg_temp_c', index='city', columns='country', fill_value=0, margins=True))
+
+# Index
+print(temperatures)
+temperatures_ind = temperatures.set_index('city')
+print(temperatures_ind)
+print(temperatures_ind.reset_index())
+print(temperatures_ind.reset_index(drop=True))
+
+# Index Subset
+cities = ["London", "Paris"]
+temperatures_ind = temperatures.set_index(['city'])
+print(temperatures[temperatures['city'].isin(cities)])
+print(temperatures_ind.loc[cities])
+
+# Index Multiple Tuples
+temperatures_country_city = temperatures.set_index(['country','city'])
+rows_to_keep = [('Brazil','Rio De Janeiro'), ('Pakistan','Lahore')]
+print(temperatures_country_city.loc[rows_to_keep])
+
+# Index Sort
+print(temperatures_country_city.sort_index())
+print(temperatures_country_city.sort_index(level=['city']))
+print(temperatures_country_city.sort_index(level=['country','city'], ascending=[True,False]))
+
+# Index Subset Sort Multiple Tuples
+temperatures_srt = temperatures_country_city.sort_index()
+print(temperatures_srt.loc['Pakistan':'Philippines'])
+print(temperatures_srt.loc['Lahore':'Manila'])
+print(temperatures_srt.loc[('Pakistan','Lahore'):('Philippines','Manila')])
+
+# Index Subset Sort Slice Multiple Tuples
+print(temperatures_srt.loc[('India','Hyderabad'):('Iraq','Baghdad')])
+print(temperatures_srt.loc[:, 'date':'avg_temp_c'])
+print(temperatures_srt.loc[('India','Hyderabad'):('Iraq','Baghdad'), 'date':'avg_temp_c'])
+
+# Index Subset Sort Time
+temperatures_bool = temperatures[(temperatures['date'] >= "2010-01-01") & (temperatures['date'] <= "2011-12-01")]
+temperatures_time = temperatures.set_index('date').sort_index()
+print(temperatures_time.loc['2010':'2011'])
+print(temperatures_time.loc['2010-08-01':'2011-02-01'])
+
+# Index Number
+print(temperatures.iloc[22, 1])
+print(temperatures.iloc[:5])
+print(temperatures.iloc[:, 2:4])
+print(temperatures.iloc[:5, 2:4])
+
+# Pivot Subset Filter
+temperatures['year'] = pd.to_datetime(temperatures['date']).dt.year
+temp_by_country_city_vs_year = temperatures.pivot_table('avg_temp_c', index=['country', 'city'], columns='year')
+temp_by_country_city_vs_year.loc['Egypt':'India']
+temp_by_country_city_vs_year.loc[('Egypt','Cairo'):('India','Delhi')]
+temp_by_country_city_vs_year.loc[('Egypt','Cairo'):('India','Delhi'),'2005':'2010']
+mean_temp_by_year = temp_by_country_city_vs_year.mean(axis='index')
+print(mean_temp_by_year[mean_temp_by_year == mean_temp_by_year.max()])
+mean_temp_by_city = temp_by_country_city_vs_year.mean(axis='columns')
+print(mean_temp_by_city[mean_temp_by_city == mean_temp_by_city.min()])

@@ -1,7 +1,7 @@
 import pandas as pd
 
-wards = pd.read_pickle(r'D:\STUDY\python\Review\05 join pandas\ward.p')
-census = pd.read_pickle(r'D:\STUDY\python\Review\05 join pandas\census.p')
+wards = pd.read_pickle(r'D:\STUDY\python\Review\05 join pandas\datasets\ward.p')
+census = pd.read_pickle(r'D:\STUDY\python\Review\05 join pandas\datasets\census.p')
 
 # Merge the wards and census tables on the ward column
 wards_census = wards.merge(census, on='ward')

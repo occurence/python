@@ -56,3 +56,6 @@ for t, values in prices_by_type.items():
 
 plt.legend()
 plt.show()
+
+plt.boxplot(avocados['avg_price'])
+plt.show()

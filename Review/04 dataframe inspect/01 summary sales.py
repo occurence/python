@@ -69,3 +69,12 @@ print(sales.pivot_table(values='weekly_sales', index='type', aggfunc=['mean','me
 print(sales.pivot_table(values='weekly_sales', index='type', columns='is_holiday'))
 print(sales.pivot_table(values='weekly_sales', index='type', columns='department', fill_value=0))
 print(sales.pivot_table(values="weekly_sales", index="department", columns="type", fill_value=0, margins=True))
+print(pd.crosstab(sales['weekly_sales'], sales['type'], aggfunc=['mean','median']))
+
+print(sales.groupby(['type', 'is_holiday'])['weekly_sales'].agg(['mean', 'median']))
+print(sales.groupby(['type', 'is_holiday'])['weekly_sales'].agg(['mean', 'median']).unstack('is_holiday'))
+print(sales.pivot_table(values='weekly_sales', index='type', columns='is_holiday', aggfunc=['mean','median']))
+print(pd.crosstab(values=sales['weekly_sales'], index=sales['type'], columns=sales['is_holiday'], aggfunc=['mean','median']))
+
+# print(sales.agg({'weekly_sales': ['mean', 'std'], 'temperature_c': ['nunique', 'sum']}))
+# print(sales['weekly_sales'].agg(lambda x: x.quantile(0.95)))

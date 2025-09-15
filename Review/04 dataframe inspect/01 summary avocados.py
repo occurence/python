@@ -59,3 +59,17 @@ plt.show()
 
 plt.boxplot(avocados['avg_price'])
 plt.show()
+
+
+avocados_2016 = pd.read_csv(r'D:\STUDY\python\Review\04 dataframe inspect\avocados_2016.csv')
+
+# List the columns with missing values
+cols_with_missing = ["small_sold", "large_sold", "xl_sold"]
+
+# Create histograms showing the distributions cols_with_missing
+avocados_2016[cols_with_missing].hist()
+plt.show()
+avocados_2016[cols_with_missing].plot(kind="hist", alpha=0.5, bins=30)
+plt.show()
+avocados_2016[cols_with_missing].plot(kind="hist", subplots=True)
+plt.show()

@@ -27,32 +27,6 @@ sns.boxplot(data=planes, x='Airline', y='Price')
 
 plt.show()
 
-# print(planes['Additional_Info'].isna())
-# print(planes['Additional_Info'].value_counts())
-# print(planes[planes['Additional_Info'].isna()])
-
-# print(planes.loc[planes['Additional_Info'].isna(), ['Additional_Info']])
-# # print(planes.value_counts())
-# print(planes.loc[planes['Additional_Info'].isna(), 'Additional_Info'].value_counts(dropna=False))
-
-# print(planes["Additional_Info"].value_counts(dropna=False))
-# print(planes["Additional_Info"].value_counts())
-
-
-# print(planes.loc[planes['Additional_Info'].isna(), 'Additional_Info'].value_counts(dropna=False))
-# # print(planes.loc[planes['Additional_Info'].isna()])
-# print(planes.loc[planes['Additional_Info'].isna(), ['Additional_Info', 'Price']])
-# print(planes.loc[planes['Price'].isna(), ['Additional_Info']])
-# print(planes.loc[planes['Price'].isna(), ['Additional_Info']].value_counts(dropna=False))
-
-
-
-print(planes.loc[planes['Price'].isna()])
-
-
-
-
-
 # planes.drop(columns=['Additional_Info'], axis=1, inplace=True)
 
 # Calculate median plane ticket prices by Airline
@@ -68,7 +42,6 @@ planes["Price"] = planes["Price"].fillna(planes["Airline"].map(prices_dict))
 
 # Check for missing values
 print(planes.isna().sum())
-
 
 # Filter the DataFrame for object columns
 non_numeric = planes.select_dtypes("object")

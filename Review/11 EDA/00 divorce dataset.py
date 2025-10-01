@@ -29,3 +29,8 @@ divorce['woman_age_marriage'] = divorce['marriage_year'] - divorce['dob_woman'].
 # Create the scatter plot
 sns.scatterplot(data=divorce, x='woman_age_marriage', y='income_woman', hue='education_woman')
 plt.show()
+
+# Update the KDE plot so that marriage duration can't be smoothed too far
+# Update the KDE plot to show a cumulative distribution function
+sns.kdeplot(data=divorce, x="marriage_duration", hue="num_kids", cut=0, cumulative=True)
+plt.show()

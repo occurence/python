@@ -1,4 +1,5 @@
 Designation,date_of_response,Experience,Employment_Status,Salary_In_Rupees,Employee_Location,Company_Location,Company_Size,Remote_Working_Ratio,Salary_USD,Job_Category
+Machine Learning Scientist,2020-01-07 00:00:00,SE,FT,20688070.0,JP,JP,S,0.0,248256.84,Machine Learning
 Big Data Engineer,2020-09-19 00:00:00,SE,FT,8674985.0,GB,GB,M,50.0,104099.82,Data Engineering
 Product Data Analyst,2020-11-21 00:00:00,MI,FT,1591390.0,HN,HN,S,0.0,19096.68,Data Analytics
 Machine Learning Engineer,2020-11-29 00:00:00,SE,FT,11935425.0,US,US,L,50.0,143225.1,Machine Learning

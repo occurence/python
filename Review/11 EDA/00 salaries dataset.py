@@ -63,3 +63,16 @@ salaries["salary_level"] = pd.cut(salaries["Salary_USD"],
 # Plot the count of salary levels at companies of different sizes
 sns.countplot(data=salaries, x="Company_Size", hue="salary_level")
 plt.show()
+
+# Filter for employees in the US or GB
+usa_and_gb = salaries[salaries["Employee_Location"].isin(["US", "GB"])]
+
+# Create a barplot of salaries by location
+sns.barplot(data=usa_and_gb, x="Employee_Location", y="Salary_USD")
+plt.show()
+
+# Create a bar plot of salary versus company size, factoring in employment status
+sns.barplot(data=salaries, x="Company_Size", y="Salary_USD", hue="Employment_Status")
+plt.show()
+
+print("On average, large companies pay contractors more than medium-sized companies.")

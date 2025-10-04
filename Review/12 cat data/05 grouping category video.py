@@ -11,6 +11,7 @@ print(adult_obj.mean(numeric_only=True))
 print(adult.groupby(by=['Above/Below 50k']).mean(numeric_only=True))
 
 print(adult.groupby(by=['Above/Below 50k'])[['Age', 'Education Num']].sum())
+print(adult.groupby(by=['Above/Below 50k'])['Hours/Week'].mean())
 print(adult.groupby(by=['Above/Below 50k']).sum()[['Age', 'Education Num']])
 
 print(adult.groupby(by=['Above/Below 50k', 'Marital Status']).size())

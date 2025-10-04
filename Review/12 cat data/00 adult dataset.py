@@ -56,3 +56,28 @@ print(adult.groupby(by=['Above/Below 50k'])[['Age', 'Education Num']].sum())
 print(adult.groupby(by=['Above/Below 50k']).sum()[['Age', 'Education Num']])
 
 print(adult.groupby(by=['Above/Below 50k', 'Marital Status']).size())
+
+gb = adult.groupby(by=['Workclass', 'Above/Below 50k', 'Education']).size()
+
+a = len(adult['Workclass'].value_counts())
+b = len(adult['Above/Below 50k'].value_counts())
+c = len(adult['Education'].value_counts())
+print(len(gb), "groups out of ", a * b * c , "possible groups since no rows exist for some combinations")
+
+# Group the adult dataset by "Sex" and "Above/Below 50k"
+gb = adult.groupby(by=['Sex', 'Above/Below 50k'])
+
+# Print out how many rows are in each created group
+print(gb.size())
+
+# Print out the mean of each group for all columns
+print(gb.mean(numeric_only=True))
+
+# Create a list of user-selected variables
+user_list = ['Education', 'Above/Below 50k']
+
+# Create a GroupBy object using this list
+gb = adult.groupby(by=user_list)
+
+# Find the mean for the variable "Hours/Week" for each group - Be efficient!
+print(gb['Hours/Week'].mean())

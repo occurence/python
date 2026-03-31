@@ -27,3 +27,8 @@ avg_inv_by_month = inv_jul_thr_sep.groupby(level=0).agg({'total':'mean'})
 # Bar plot of avg_inv_by_month
 avg_inv_by_month.plot(kind='bar')
 plt.show()
+
+# Way to come through! There are many ways to write code for this task. 
+# However, concatenating the tables with a key provides a hierarchical index that can be used for grouping. 
+# Once grouped, you can average the groups and create plots. 
+# You were able to find out that September had the highest average invoice total.

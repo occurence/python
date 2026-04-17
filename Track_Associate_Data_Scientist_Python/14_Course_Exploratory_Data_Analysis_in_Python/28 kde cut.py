@@ -1,0 +1,9 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+divorce = pd.read_csv(r'D:\STUDY\python\Track_Associate_Data_Scientist_Python\14_Course_Exploratory_Data_Analysis_in_Python\datasets\divorce_age.csv', parse_dates=['marriage_date'])
+
+# Update the KDE plot so that marriage duration can't be smoothed too far
+sns.kdeplot(data=divorce, x="marriage_duration", hue="num_kids", cut=0)
+plt.show()

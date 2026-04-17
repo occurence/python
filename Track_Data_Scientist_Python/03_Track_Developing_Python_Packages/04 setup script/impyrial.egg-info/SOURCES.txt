@@ -1,0 +1,5 @@
+setup.py
+impyrial.egg-info/PKG-INFO
+impyrial.egg-info/SOURCES.txt
+impyrial.egg-info/dependency_links.txt
+impyrial.egg-info/top_level.txt

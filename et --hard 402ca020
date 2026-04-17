@@ -1,0 +1,95 @@
+[33m43e79856[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m HEAD@{0}: reset: moving to HEAD~1
+[33mcab23d61[m[33m ([m[1;31morigin/main[m[33m)[m HEAD@{1}: reset: moving to HEAD~1
+[33m402ca020[m HEAD@{2}: commit: Image Processing
+[33mcab23d61[m[33m ([m[1;31morigin/main[m[33m)[m HEAD@{3}: commit: Image Processing
+[33m43e79856[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m HEAD@{4}: commit: Image Processing
+[33m5ff7183b[m HEAD@{5}: commit: Image Processing
+[33m1644ac2a[m HEAD@{6}: commit: Image Processing
+[33m08c24ea8[m HEAD@{7}: commit: Intermediate Deep Learning with PyTorch
+[33m9c5fe312[m HEAD@{8}: commit: Intermediate Deep Learning with PyTorch
+[33m89c1fb10[m HEAD@{9}: commit: Intermediate Deep Learning with PyTorch
+[33m8f86a325[m HEAD@{10}: commit: Intermediate Deep Learning with PyTorch
+[33m1dda5c77[m HEAD@{11}: commit: Intermediate Deep Learning with PyTorch
+[33m48aff146[m HEAD@{12}: commit: Intermediate Deep Learning with PyTorch
+[33ma185514d[m HEAD@{13}: commit: Intermediate Deep Learning with PyTorch
+[33mf4122e68[m HEAD@{14}: commit: Intermediate Deep Learning with PyTorch
+[33m924a8a58[m HEAD@{15}: commit: Intermediate Deep Learning with PyTorch
+[33m1a05d69e[m HEAD@{16}: commit: Intermediate Deep Learning with PyTorch
+[33ma842c3a9[m HEAD@{17}: commit: Intermediate Deep Learning with PyTorch
+[33m4445fc5c[m HEAD@{18}: commit: Intermediate Deep Learning with PyTorch
+[33m12eb206b[m HEAD@{19}: commit: Intermediate Deep Learning with PyTorch
+[33m472ea18b[m HEAD@{20}: reset: moving to HEAD
+[33m472ea18b[m HEAD@{21}: commit: Intermediate Deep Learning with PyTorch
+[33m4741a355[m HEAD@{22}: commit: Intermediate Deep Learning with PyTorch
+[33m5c562a07[m HEAD@{23}: reset: moving to HEAD
+[33m5c562a07[m HEAD@{24}: commit: Intermediate Deep Learning with PyTorch
+[33m8af8ab7c[m HEAD@{25}: commit: Intermediate Deep Learning with PyTorch
+[33m822bcb23[m HEAD@{26}: commit: Intermediate Deep Learning with PyTorch
+[33mcf5130a6[m HEAD@{27}: commit: Intermediate Deep Learning with PyTorch
+[33ma214af03[m HEAD@{28}: commit: Introduction to Deep Learning with PyTorch
+[33me80a5eb7[m HEAD@{29}: reset: moving to HEAD
+[33me80a5eb7[m HEAD@{30}: commit: Introduction to Deep Learning with PyTorch
+[33m47652daa[m HEAD@{31}: commit: Introduction to Deep Learning with PyTorch
+[33m7d3455d9[m HEAD@{32}: commit: Introduction to Deep Learning with PyTorch
+[33m4edcdea6[m HEAD@{33}: reset: moving to HEAD
+[33m4edcdea6[m HEAD@{34}: reset: moving to HEAD~1
+[33m261a51e4[m HEAD@{35}: commit: Introduction to Deep Learning with PyTorch
+[33m4edcdea6[m HEAD@{36}: commit: Introduction to Deep Learning with PyTorch
+[33m48ae6cdf[m HEAD@{37}: reset: moving to HEAD~1
+[33m40694db2[m HEAD@{38}: commit: Introduction to Deep Learning with PyTorch
+[33m48ae6cdf[m HEAD@{39}: reset: moving to HEAD
+[33m48ae6cdf[m HEAD@{40}: commit: Introduction to Deep Learning with PyTorch
+[33m798bf4ca[m HEAD@{41}: commit: Introduction to Deep Learning with PyTorch
+[33mf483ca18[m HEAD@{42}: commit: Introduction to Deep Learning with PyTorch
+[33m85275ed2[m HEAD@{43}: commit: Introduction to Deep Learning with PyTorch
+[33m4d3cf62c[m HEAD@{44}: commit: Introduction to Deep Learning with PyTorch
+[33mf0649bca[m HEAD@{45}: commit: Introduction to Deep Learning with PyTorch
+[33ma5b48f15[m HEAD@{46}: commit: Introduction to Deep Learning with PyTorch
+[33m6bf880b3[m HEAD@{47}: commit: Introduction to Deep Learning with PyTorch
+[33mc8f0b4c8[m HEAD@{48}: commit: Introduction to Deep Learning with PyTorch
+[33m742e2706[m HEAD@{49}: commit: Introduction to Deep Learning with PyTorch
+[33mf3892c3b[m HEAD@{50}: commit: Track CSV files again after updating .gitignore
+[33me03308fc[m HEAD@{51}: pull: Merge made by the 'ort' strategy.
+[33m422132f1[m HEAD@{52}: commit: Introduction to Deep Learning with PyTorch
+[33m0e3da1ca[m HEAD@{53}: commit: Introduction to Deep Learning with PyTorch
+[33m7ebcf89a[m HEAD@{54}: commit: Introduction to Deep Learning with PyTorch
+[33m16f49b22[m HEAD@{55}: commit: Feature Engineering for NLP
+[33m6e5b89fd[m HEAD@{56}: commit: Feature Engineering for NLP
+[33m49a99852[m HEAD@{57}: commit: Feature Engineering for NLP
+[33mea04d992[m HEAD@{58}: commit: Feature Engineering for NLP
+[33mb100e655[m HEAD@{59}: commit: Feature Engineering for NLP
+[33m8158d4a2[m HEAD@{60}: commit: Feature Engineering for NLP
+[33m9fa5d986[m HEAD@{61}: commit: Feature Engineering for NLP
+[33m4b62db91[m HEAD@{62}: commit: Feature Engineering for NLP
+[33mf67e77ff[m HEAD@{63}: reset: moving to HEAD
+[33mf67e77ff[m HEAD@{64}: commit: Feature Engineering for NLP
+[33m5738b636[m HEAD@{65}: commit: Feature Engineering for NLP
+[33mc40c5e1c[m HEAD@{66}: commit: Feature Engineering for NLP
+[33m88f117b9[m HEAD@{67}: commit: Feature Engineering for NLP
+[33m6f23b766[m HEAD@{68}: commit: Feature Engineering for NLP
+[33md9e0c4ae[m HEAD@{69}: commit: Feature Engineering for NLP
+[33m0a5299b3[m HEAD@{70}: commit: Feature Engineering for NLP
+[33m97220cd0[m HEAD@{71}: commit: Feature Engineering for NLP
+[33m3da0209f[m HEAD@{72}: commit: Feature Engineering for NLP
+[33me49331d9[m HEAD@{73}: commit: Feature Engineering for NLP
+[33m7e9443a6[m HEAD@{74}: commit: Natural Language Processing with spaCy
+[33mf0bbd507[m HEAD@{75}: commit: Natural Language Processing with spaCy
+[33me9de2fcc[m HEAD@{76}: reset: moving to HEAD
+[33me9de2fcc[m HEAD@{77}: commit: Natural Language Processing with spaCy
+[33mc16cbacd[m HEAD@{78}: commit: Natural Language Processing with spaCy
+[33m70c275f1[m HEAD@{79}: commit: Natural Language Processing with spaCy
+[33m618ec3a6[m HEAD@{80}: commit: Natural Language Processing with spaCy
+[33m4e113975[m HEAD@{81}: commit: Natural Language Processing with spaCy
+[33m7dd44167[m HEAD@{82}: commit: Natural Language Processing with spaCy
+[33ma22ce470[m HEAD@{83}: commit: untracked
+[33md6189e5c[m HEAD@{84}: commit: untracked
+[33m2be632d6[m HEAD@{85}: commit: untracked
+[33m478f33da[m HEAD@{86}: commit: untracked
+[33m64829a89[m HEAD@{87}: commit: untracked
+[33m596f98ed[m HEAD@{88}: commit: Remove large wheel and zip files cache
+[33m34db63c9[m HEAD@{89}: commit: Remove large wheel and zip files
+[33m848f8770[m HEAD@{90}: commit: Natural Language Processing with spaCy
+[33mbeeeb9b6[m HEAD@{91}: commit: Introduction to Natural Language Processing
+[33me86b6888[m HEAD@{92}: commit: Introduction to Natural Language Processing
+[33mcb5a8d10[m HEAD@{93}: reset: moving to HEAD
+[33mcb5a8d10[m HEAD@{94}: commit: Introduction to Natural Language Processing

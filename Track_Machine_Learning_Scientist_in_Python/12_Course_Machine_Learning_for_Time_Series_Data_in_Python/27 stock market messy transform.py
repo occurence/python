@@ -1,0 +1,69 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+prices = pd.read_csv(
+    r'D:\STUDY\python\Track_Machine_Learning_Scientist_in_Python\12_Course_Machine_Learning_for_Time_Series_Data_in_Python\datasets\prices_raw.csv',
+    index_col=0,
+    parse_dates=True
+)
+
+# Visualize the dataset
+prices.plot(legend=False)
+plt.tight_layout()
+plt.show()
+
+# Count the missing values of each time series
+missing_values = prices.isna().sum()
+print(missing_values)
+
+# Create a function we'll use to interpolate and plot
+def interpolate_and_plot(prices, interpolation):
+
+    # Create a boolean mask for missing values
+    missing_values = prices.isna()
+
+    # Interpolate the missing values
+    prices_interp = prices.interpolate(interpolation)
+
+    # Plot the results, highlighting the interpolated values in black
+    fig, ax = plt.subplots(figsize=(10, 5))
+    prices_interp.plot(color='k', alpha=.6, ax=ax, legend=False)
+    
+    # Now plot the interpolated values on top in red
+    prices_interp[missing_values].plot(ax=ax, color='r', lw=3, legend=False)
+    plt.show()
+
+# Interpolate using the latest non-missing value
+interpolation_type = 'zero'
+interpolate_and_plot(prices, interpolation_type)
+
+# Interpolate linearly
+interpolation_type = 'linear'
+interpolate_and_plot(prices, interpolation_type)
+
+# Interpolate with a quadratic function
+interpolation_type = 'quadratic'
+interpolate_and_plot(prices, interpolation_type)
+
+print("When you interpolate, the pre-existing data is used to infer the values of missing data. As you can see, the method you use for this has a big effect on the outcome.")
+
+# Your custom function
+def percent_change(series):
+    # Collect all *but* the last value of this window, then the final value
+    # previous_values = series[:-1]
+    # last_value = series[-1]
+    previous_values = series.iloc[:-1]
+    last_value = series.iloc[-1]
+
+
+    # Calculate the % difference between the last value and the mean of earlier values
+    percent_change = (last_value - np.mean(previous_values)) / np.mean(previous_values)
+    return percent_change
+
+# Apply your custom function and plot
+prices_perc = prices.rolling(20).apply(percent_change)
+prices_perc.loc["2014":"2015"].plot()
+plt.show()
+
+print("You've converted the data so it's easier to compare one time point to another. This is a cleaner representation of the data.")
